@@ -1,0 +1,105 @@
+[
+  {
+    "name": "inetRouter",
+    "cpus": 1,
+    "gui": false,
+    "box": "centos/8",
+    "private_network": 
+    [
+      { "ip": "192.168.255.1", "adapter": 2, "netmask": "255.255.255.252", "virtualbox__intnet": "router-net" },
+      { "ip": "192.168.56.10", "adapter": 3, "netmask": "255.255.255.0" }
+    ],
+    "memory": "640",
+    "no_share": true
+  },
+  {
+    "name": "centralRouter",
+    "cpus": 1,
+    "gui": false,
+    "box": "centos/8",
+    "private_network":
+    [
+      { "ip": "192.168.255.2", "adapter": 2, "netmask": "255.255.255.252", "virtualbox__intnet": "router-net"      },
+      { "ip": "192.168.0.1",   "adapter": 3, "netmask": "255.255.255.240", "virtualbox__intnet": "dir-net"         },
+      { "ip": "192.168.0.33",  "adapter": 4, "netmask": "255.255.255.240", "virtualbox__intnet": "hw-net"          },
+      { "ip": "192.168.0.65",  "adapter": 5, "netmask": "255.255.255.192", "virtualbox__intnet": "mgt-net"         },
+      { "ip": "192.168.255.9", "adapter": 6, "netmask": "255.255.255.252", "virtualbox__intnet": "office1-central" },
+      { "ip": "192.168.255.5", "adapter": 7, "netmask": "255.255.255.252", "virtualbox__intnet": "office2-central" },
+      { "ip": "192.168.56.11", "adapter": 8, "netmask": "255.255.255.0" }
+    ],
+    "memory": 640,
+    "no_share": true
+  },
+  {
+    "name": "centralServer",
+    "cpus": 1,
+    "gui": false,
+    "box": "centos/8",
+    "private_network": 
+    [
+      { "ip": "192.168.0.2",   "adapter": 2, "netmask": "255.255.255.240", "virtualbox__intnet": "dir-net" },
+      { "ip": "192.168.56.12", "adapter": 3, "netmask": "255.255.255.0" }
+    ],
+    "memory": "640",
+    "no_share": true
+  },
+  {
+    "name": "office1Router",
+    "cpus": 1,
+    "gui": false,
+    "box": "centos/8",
+    "private_network":
+    [
+      { "ip": "192.168.255.10", "adapter": 2, "netmask": "255.255.255.252", "virtualbox__intnet": "office1-central" },
+      { "ip": "192.168.2.1",    "adapter": 3, "netmask": "255.255.255.192", "virtualbox__intnet": "dev1-net"        },
+      { "ip": "192.168.2.65",   "adapter": 4, "netmask": "255.255.255.192", "virtualbox__intnet": "test1-net"       },
+      { "ip": "192.168.2.129",  "adapter": 5, "netmask": "255.255.255.192", "virtualbox__intnet": "managers-net"    },
+      { "ip": "192.168.2.193",  "adapter": 6, "netmask": "255.255.255.192", "virtualbox__intnet": "office1-net"     },
+      { "ip": "192.168.56.20",  "adapter": 7, "netmask": "255.255.255.0" }
+    ],
+    "memory": 640,
+    "no_share": true
+  },
+  {
+    "name": "office1Server",
+    "cpus": 1,
+    "gui": false,
+    "box": "centos/8",
+    "private_network": 
+    [
+      { "ip": "192.168.2.130", "adapter": 2, "netmask": "255.255.255.192", "virtualbox__intnet": "managers-net" },
+      { "ip": "192.168.56.21", "adapter": 3, "netmask": "255.255.255.0" }
+    ],
+    "memory": "640",
+    "no_share": true
+  },
+  {
+    "name": "office2Router",
+    "cpus": 1,
+    "gui": false,
+    "box": "centos/8",
+    "private_network":
+    [
+      { "ip": "192.168.255.6", "adapter": 2, "netmask": "255.255.255.252", "virtualbox__intnet": "office2-central" },
+      { "ip": "192.168.1.1",   "adapter": 3, "netmask": "255.255.255.128", "virtualbox__intnet": "dev2-net"        },
+      { "ip": "192.168.1.129", "adapter": 4, "netmask": "255.255.255.192", "virtualbox__intnet": "test2-net"       },
+      { "ip": "192.168.1.193", "adapter": 5, "netmask": "255.255.255.192", "virtualbox__intnet": "office2-net"     },
+      { "ip": "192.168.56.30", "adapter": 6, "netmask": "255.255.255.0" }
+    ],
+    "memory": 640,
+    "no_share": true
+  },
+  {
+    "name": "office2Server",
+    "cpus": 1,
+    "gui": false,
+    "box": "centos/8",
+    "private_network": 
+    [
+      { "ip": "192.168.1.2",   "adapter": 2, "netmask": "255.255.255.128", "virtualbox__intnet": "dev2-net" },
+      { "ip": "192.168.56.31", "adapter": 3, "netmask": "255.255.255.0" }
+    ],
+    "memory": "640",
+    "no_share": true
+  }
+]
